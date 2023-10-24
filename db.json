@@ -1,11 +1,19 @@
 {
-  "posts": [
+  "tasks": [
     {
       "id": 1,
-      "title": "hello"
+      "description": "Doing homework"
+    },
+    {
+      "id": 2,
+      "description": "Doing laundry"
+    },
+    {
+      "id": 3,
+      "description": "Washing dishes"
     }
   ],
   "profile": {
-    "name": "typicode"
+    "username": "stevenplus"
   }
 }

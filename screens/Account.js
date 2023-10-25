@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Alert } from "react-native";
-import { Card, Appbar, Avatar } from "react-native-paper";
+import { Appbar, Avatar } from "react-native-paper";
 import { MainStyle, AccountStyle } from "../Stylesheet";
 import axios from "axios";
 
-export default function Account(props) {
+export default function Account({ navigation }) {
   const api = axios.create({
     baseURL: "https://my-json-server.typicode.com/steven-appdev/task-roulette/",
   });
@@ -13,7 +13,7 @@ export default function Account(props) {
 
   const logoutAlert = () => {
     Alert.alert("Logging out?", "Are you sure you want to log out?", [
-      { text: "Yes" },
+      { text: "Yes", onPress: () => navigation.navigate("Login") },
       { text: "No", style: "cancel" },
     ]);
   };
@@ -37,7 +37,7 @@ export default function Account(props) {
           }}
         />
       </Appbar.Header>
-      <View style={[MainStyle.center, AccountStyle.account]}>
+      <View style={[MainStyle.center, AccountStyle.container]}>
         <Avatar.Image
           size={128}
           source={{
